@@ -20,7 +20,7 @@ include 'layouts/_header.php';
                             <input class="form-control" type="text" name="judul" id="judul" value="" required />
 
                             <label for="gambar" class="form-label mt-2">Gambar</label>
-                            <input class="form-control" type="file" name="gambar" id="gambar" value="" required />
+                            <input class="form-control" type="file" name="gambar" id="gambar" value="" />
 
                             <label for="konten" class="form-label mt-2">Konten</label>
                             <textarea class="form-control" name="konten" rows="5"></textarea>
