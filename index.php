@@ -1,3 +1,11 @@
+<?php
+include 'actions/koneksi.php';
+$query_anggota = mysqli_query($koneksi, "SELECT * FROM anggota");
+$query_event = mysqli_query($koneksi, "SELECT * FROM event");
+
+$total_anggota = mysqli_num_rows($query_anggota);
+$total_event = mysqli_num_rows($query_event);
+?>
 <!doctype html>
 <html lang="en">
 
@@ -65,11 +73,11 @@
             <div class="col-12 info-panel">
                 <div class="row">
                     <div class="col-lg text-center">
-                        <h4>1000 Anggota</h4>
+                        <h4><?= $total_anggota ?> Anggota</h4>
                         <p>Anggota Aktif Terdaftar</p>
                     </div>
                     <div class="col-lg text-center">
-                        <h4>120 Event</h4>
+                        <h4><?= $total_event ?> Event</h4>
                         <p>Kumpulan Event Yang Ada</p>
                     </div>
                     <div class="col-lg text-center">
