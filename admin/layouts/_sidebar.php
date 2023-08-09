@@ -32,14 +32,14 @@
             </div>
 
             <div class="list-item ">
-                <a href="kelas.php">
+                <a href="galeri.php">
                     <i class="me-2 text-white bx bx-memory-card"></i>
                     <span class="description">Galeri Foto</span>
                 </a>
             </div>
 
             <div class="list-item logout">
-                <a href="../action/logout.php">
+                <a href="../actions/logout.php">
                     <i class="me-2 text-white bx bx-log-out"></i>
                     <span class="description">Logout</span>
                 </a>

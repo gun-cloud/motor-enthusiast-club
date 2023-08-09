@@ -16,8 +16,8 @@ echo $konten;
 if (!in_array($ext, $ekstensi)) {
     $_SESSION['pesan'] = 'Pastikan Ekstensi png, jpg, jpeg';
 } else {
-    $nama_file = $rand . '_' . $filename;
-    move_uploaded_file($_FILES['gambar']['tmp_name'], '../assets/img/' . $rand . '_' . $filename);
+    $nama_file = 'artikel' . $rand . '_' . $filename;
+    move_uploaded_file($_FILES['gambar']['tmp_name'], '../assets/img/' . 'artikel' . $rand . '_' . $filename);
     $query = "INSERT INTO artikel VALUES ('', '$judul', '$konten', '$nama_file','$id_anggota')";
 
     if (mysqli_query($koneksi, $query)) {
