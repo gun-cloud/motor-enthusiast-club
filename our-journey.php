@@ -2,6 +2,7 @@
 include 'actions/koneksi.php';
 $query_artikel = mysqli_query($koneksi, "SELECT * FROM artikel");
 $query_event = mysqli_query($koneksi, "SELECT * FROM event");
+$query_galeri = mysqli_query($koneksi, "SELECT * FROM galeri");
 ?>
 <!doctype html>
 <html lang="en">
@@ -56,7 +57,7 @@ $query_event = mysqli_query($koneksi, "SELECT * FROM event");
     <div class="container" style="margin-top: 100px;">
         <!-- artikel -->
         <div id="artikel"></div>
-        <div class="row justify-content-center">
+        <div class="row justify-content-center mt-5 mb-5">
             <div class="col-md-12 text-center">
                 <h2 style="font-weight: 500; font-size: 52px;">ARTIKEL</h2>
             </div>
@@ -77,17 +78,17 @@ $query_event = mysqli_query($koneksi, "SELECT * FROM event");
 
         <!-- event -->
         <div id="event"></div>
-        <div class="row justify-content-center">
+        <div class="row justify-content-center mt-5 mb-5">
             <div class="col-md-12 text-center">
                 <h2 style="font-weight: 500; font-size: 52px;">EVENT</h2>
             </div>
             <?php foreach ($query_event as $event) : ?>
                 <div class="col-md-4 mt-3">
                     <div class="card" style="width: 18rem;">
-                        <img src="assets/img/<?=$event['gambar']?>" class="card-img-top" alt="...">
+                        <img src="assets/img/<?= $event['gambar'] ?>" class="card-img-top" height="300">
                         <div class="card-body">
-                            <h5 class="card-title"><?=$event['nama']?></h5>
-                            <p class="card-text"><?=$event['deskripsi']?></p>
+                            <h5 class="card-title"><?= $event['nama'] ?></h5>
+                            <p class="card-text"><?= $event['deskripsi'] ?></p>
                             <a href="#" class="btn btn-primary">Selengkapnya</a>
                         </div>
                     </div>
@@ -97,25 +98,22 @@ $query_event = mysqli_query($koneksi, "SELECT * FROM event");
 
         <!-- galeri foto -->
         <div id="galeri-foto"></div>
-        <div class="row justify-content-center">
+        <div class="row justify-content-center mt-5 mb-5">
             <div class="col-md-12 text-center">
                 <h2 style="font-weight: 500; font-size: 52px;">GALERI FOTO</h2>
             </div>
-        </div>
-        <div class="col-md-4 mt-3">
-            <div class="card" style="width: 18rem;">
-                <img src="assets/img/motor1.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Judul Artikel 3</h5>
-                    <p class="card-text">Isi konten artikel 3.</p>
-                    <a href="#" class="btn btn-primary">Selengkapnya..</a>
+            <?php foreach ($query_galeri as $galeri) : ?>
+                <div class="col-md-4 mt-3">
+                    <div class="card" style="width: 18rem;">
+                        <img src="assets/img/<?= $galeri['gambar'] ?>" class="card-img-top" height="300">
+                    </div>
                 </div>
-            </div>
+            <?php endforeach ?>
         </div>
 
         <!-- client -->
         <div id="client"></div>
-        <div class="row justify-content-center">
+        <div class="row justify-content-center mt-5 mb-5">
             <div class="col-md-12 text-center">
                 <h2 style="font-weight: 500; font-size: 52px;">CLIENT KAMI</h2>
             </div>
