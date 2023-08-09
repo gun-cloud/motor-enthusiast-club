@@ -1,6 +1,7 @@
 <?php
 include 'actions/koneksi.php';
 $query_artikel = mysqli_query($koneksi, "SELECT * FROM artikel");
+$query_event = mysqli_query($koneksi, "SELECT * FROM event");
 ?>
 <!doctype html>
 <html lang="en">
@@ -80,16 +81,18 @@ $query_artikel = mysqli_query($koneksi, "SELECT * FROM artikel");
             <div class="col-md-12 text-center">
                 <h2 style="font-weight: 500; font-size: 52px;">EVENT</h2>
             </div>
-            <div class="col-md-4 mt-3">
-                <div class="card" style="width: 18rem;">
-                    <img src="assets/img/motor1.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Judul Artikel 3</h5>
-                        <p class="card-text">Isi konten artikel 3.</p>
-                        <a href="#" class="btn btn-primary">Selengkapnya..</a>
+            <?php foreach ($query_event as $event) : ?>
+                <div class="col-md-4 mt-3">
+                    <div class="card" style="width: 18rem;">
+                        <img src="assets/img/<?=$event['gambar']?>" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title"><?=$event['nama']?></h5>
+                            <p class="card-text"><?=$event['deskripsi']?></p>
+                            <a href="#" class="btn btn-primary">Selengkapnya</a>
+                        </div>
                     </div>
                 </div>
-            </div>
+            <?php endforeach ?>
         </div>
 
         <!-- galeri foto -->

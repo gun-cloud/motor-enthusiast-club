@@ -25,7 +25,7 @@
 
 
             <div class="list-item ">
-                <a href="jurusan.php">
+                <a href="event.php">
                     <i class="me-2 text-white bx bx-calendar-event"></i>
                     <span class="description">Event</span>
                 </a>

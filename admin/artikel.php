@@ -40,7 +40,7 @@ include 'layouts/_header.php';
                                         <td><?= $row['judul'] ?></td>
                                         <td>
                                             <a href="artikel-ubah.php?id=<?= $row['id_artikel'] ?>" style="border-radius:10px;" class="btn btn-warning"><i class="bx bx-edit-alt me-1"></i> Edit</a>
-                                            <a style="border-radius:10px;" class="btn btn-danger"><i class="bx bx-trash me-1"></i> Delete</a>
+                                            <a href="../actions/artikel-hapus.php?id=<?= $row['id_artikel']; ?>" onclick="return confirm('Apakah Yakin ingin menghapus artikel ini')" style="border-radius:10px;" class="btn btn-danger"><i class="bx bx-trash me-1"></i> Delete</a>
                                         </td>
                                     </tr>
                                 <?php endforeach ?>
