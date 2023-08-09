@@ -11,6 +11,12 @@ include 'layouts/_header.php';
         <div class="main-content">
             <div class="container-xxl flex-grow-1 container mt-2">
                 <h4 class="fw-bold py-3 mb-4">Daftar Foto</h4>
+                <?php
+                if (isset($_SESSION['pesan'])) {
+                    echo '<div class="alert alert-success">' . $_SESSION['pesan'] . '</div>';
+                    unset($_SESSION['pesan']);
+                }
+                ?>
                 <div class="card">
                     <div class="card-header">
                         <a href="galeri-tambah.php" class="btn btn-primary py-2">
